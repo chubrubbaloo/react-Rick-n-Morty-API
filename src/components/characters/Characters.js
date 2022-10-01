@@ -10,30 +10,30 @@ import {GiAlienBug} from "react-icons/gi";
 import {GiRobotAntennas} from "react-icons/gi";
 
 
-export const Characters = ({items}) => {
+export const Characters = ({characters}) => {
     return (
         <section className="flex-container">
-            {items.map((item) => (
-                <div className='card' key={item.id}>
-                    <img src={item.image} alt=""/>
-                    <h3> {item.name} </h3>
+            {characters.map((character) => (
+                <div className='card' key={character.id}>
+                    <img src={character.image} alt=""/>
+                    <h3> {character.name} </h3>
                     <div className='property-style'>
                     </div>
 
-                    <p className='property-style'> {item.status === 'Alive' ? <GiHeartBeats/> : item.status === 'Dead' ?
+                    <p className='property-style'> {character.status === 'Alive' ? <GiHeartBeats/> : character.status === 'Dead' ?
                         <GiChoppedSkull/> : <GiCurlyMask/>}
-                        {item.status === 'Alive' ? 'Alive' : item.status === 'Dead' ?
+                        {character.status === 'Alive' ? 'Alive' : character.status === 'Dead' ?
                             'Dead' : 'Unknown Status'}
                     </p>
 
-                    <p className='property-style'> {item.species === 'Human' ? <GiHumanTarget/> : item.species === 'Alien' ? <GiAlienBug/> : <GiRobotAntennas/> }
-                        {item.species === 'Human' ? 'Human' : item.species === 'Alien' ? 'Alien' : 'Robot' }
-
+                    <p className='property-style'> {character.species === 'Human' ?
+                        <GiHumanTarget/> : character.species === 'Alien' ? <GiAlienBug/> : <GiRobotAntennas/>}
+                        {character.species === 'Human' ? 'Human' : character.species === 'Alien' ? 'Alien' : 'Robot'}
                     </p>
 
-                    <p className='property-style'>{item.gender === 'Male' ? <GiMale/> :
-                        <GiFemale/>} {item.gender === 'Male' ? 'Male' : 'Female'} </p>
-                    <p className='property-style'><MdLocationPin/> {item.location.name} </p>
+                    <p className='property-style'>{character.gender === 'Male' ? <GiMale/> :
+                        <GiFemale/>} {character.gender === 'Male' ? 'Male' : 'Female'} </p>
+                    <p className='property-style'><MdLocationPin/> {character.location.name} </p>
 
                 </div>
             ))}

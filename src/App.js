@@ -6,13 +6,15 @@ import {Logo} from "./components/logo/Logo";
 
 function App() {
 
-    const [items, setItems] = useState([]);
+    const [characters, setCharacters] = useState([]);
+    
     useEffect(() => {
         const fetchItems = async () => {
             const result = await axios.get(
                 "https://rickandmortyapi.com/api/character/?page=1"
-            )
-            setItems(result.data.results)
+            );
+            
+            setCharacters(result.data.results)
         }
         fetchItems();
 
@@ -24,7 +26,7 @@ function App() {
     return (
         <div className="App">
             <Logo/>
-            <Characters items={items} />
+            <Characters characters={characters} />
         </div>
     );
 }

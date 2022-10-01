@@ -1,8 +1,8 @@
 body{
   background-color: #282c34;
-  color: white;
+  color: #2596be;
+  font-family: 'Creepster', cursive;
 }
-
 
 
 .flex-container{
@@ -33,7 +33,7 @@ body{
 }
 
 .card img{
-  border-radius: 8px 8px 0px 0;
+  border-radius: 8px 8px 0 0;
   max-width: 270px;
 }
 

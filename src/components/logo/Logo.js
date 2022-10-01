@@ -4,7 +4,7 @@ import logo from '../../Media/logo.png';
 export const Logo = () => {
     return (
         <div>
-            <img id='logo' src={logo} alt=""/>
+            <img id='logo' src={logo} alt="Rick and Morty logo"/>
         </div>
     )
 }

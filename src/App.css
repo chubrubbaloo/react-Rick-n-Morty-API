@@ -1,9 +1,8 @@
 body{
   background-color: #282c34;
-  color: #2596be;
+  color: white;
   font-family: 'Creepster', cursive;
 }
-
 
 .flex-container{
   display: flex;
@@ -19,10 +18,6 @@ body{
   margin: auto;
 }
 
-@media screen {
-  
-}
-
 .card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
   max-width: 270px;
@@ -35,9 +30,6 @@ body{
 .card img{
   border-radius: 8px 8px 0 0;
   max-width: 270px;
-}
-
-h2{
 }
 
 .property-style{

@@ -4,6 +4,7 @@ import axios from "axios";
 import {Characters} from "./components/Characters";
 import {Logo} from "./components/Logo";
 import {Pagination} from "./components/Pagination";
+import {Loader} from "./components/Loader";
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
         return () => cancel();
     }, [currentPageUrl])
 
-    if (loading) return <h2 style={{textAlign: "center", fontSize: "100px"}}>Loading...</h2>
+
 
     function goToNextPage() {
         setCurrentPageUrl(nextPageUrl);
@@ -45,6 +46,7 @@ function App() {
     return (
         <div className="App">
             <Logo/>
+            <Loader loading={loading} />
             <Characters
                 characters={characters}
             />

@@ -19,12 +19,18 @@ body{
 }
 
 .card{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
   max-width: 270px;
   margin: 20px;
   text-align: center;
   border-radius: 12px;
   background-color: #4c4e50;
+  transition: 0.25s;
+}
+
+.card:hover{
+  box-shadow: 0 4px 8px 0 rgb(90, 241, 97), 0 6px 20px 0 rgb(144, 246, 146);
+  cursor: pointer;
+  transition: 0.25s;
 }
 
 .card img{

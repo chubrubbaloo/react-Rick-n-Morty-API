@@ -22,20 +22,36 @@ function App() {
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {
             setLoading(false)
+            setNextPageUrl(res.data.info.next)
+            setPrevPageUrl(res.data.info.prev)
             setCharacters(res.data.results)
         })
 
         // Cancels old request when fetching new data just in case our old request finishes after the new one.
-        return() => cancel();
+        return () => cancel();
     }, [currentPageUrl])
 
     if (loading) return <h2 style={{textAlign: "center", fontSize: "100px"}}>Loading...</h2>
+
+    function goToNextPage() {
+        setCurrentPageUrl(nextPageUrl);
+    }
+
+    function goToPrevPage() {
+        setCurrentPageUrl(prevPageUrl);
+    }
 
 
     return (
         <div className="App">
             <Logo/>
-            <Characters characters={characters}/>
+            <Characters
+                characters={characters}
+            />
+            <Pagination
+            goToNextPage={goToNextPage}
+            goToPrevPage={goToPrevPage}
+            />
         </div>
     );
 }

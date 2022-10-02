@@ -16,14 +16,20 @@ function App() {
 
     useEffect(() => {
         setLoading(true)
+        let cancel;
 
-        axios.get(currentPageUrl).then(res => {
+        axios.get(currentPageUrl, {
+            cancelToken: new axios.CancelToken(c => cancel = c)
+        }).then(res => {
             setLoading(false)
             setCharacters(res.data.results)
         })
+
+        // Cancels old request when fetching new data just in case our old request finishes after the new one.
+        return() => cancel();
     }, [currentPageUrl])
 
-    if (loading) return <h2 style={{textAlign: "center", fontSize:"100px"}}>Loading...</h2>
+    if (loading) return <h2 style={{textAlign: "center", fontSize: "100px"}}>Loading...</h2>
 
 
     return (

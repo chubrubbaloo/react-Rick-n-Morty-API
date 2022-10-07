@@ -19,22 +19,25 @@ export const Characters = ({characters}) => {
                     <h3> {character.name} </h3>
                     <div className='property-style'>
                     </div>
-
-                    <p className='property-style'> {character.status === 'Alive' ? <GiHeartBeats/> : character.status === 'Dead' ?
-                        <GiChoppedSkull/> : <GiCurlyMask/>}
+                    <p className='property-style'>
+                        {character.status === 'Alive' ?
+                            <GiHeartBeats className='status-icons'/> : character.status === 'Dead' ?
+                                <GiChoppedSkull className='status-icons'/> : <GiCurlyMask className='status-icons'/>}
                         {character.status === 'Alive' ? 'Alive' : character.status === 'Dead' ?
                             'Dead' : 'Unknown Status'}
                     </p>
-
-                    <p className='property-style'> {character.species === 'Human' ?
-                        <GiHumanTarget/> : character.species === 'Alien' ? <GiAlienBug/> : <GiRobotAntennas/>}
+                    <p className='property-style'>
+                        {character.species === 'Human' ? <GiHumanTarget className='status-icons'/> : character.species === 'Alien' ? <GiAlienBug className='status-icons'/> :
+                                <GiRobotAntennas className='status-icons'/>}
                         {character.species === 'Human' ? 'Human' : character.species === 'Alien' ? 'Alien' : 'Robot'}
                     </p>
-
-                    <p className='property-style'>{character.gender === 'Male' ? <GiMale/> :
-                        <GiFemale/>} {character.gender === 'Male' ? 'Male' : 'Female'} </p>
-                    <p className='property-style'><MdLocationPin/> {character.location.name} </p>
-
+                    <p className='property-style'>
+                        {character.gender === 'Male' ? <GiMale className='status-icons'/> :
+                        <GiFemale className='status-icons'/>} {character.gender === 'Male' ? 'Male' : 'Female'}
+                    </p>
+                    <p className='property-style'>
+                        <MdLocationPin className='status-icons'/> {character.location.name}
+                    </p>
                 </div>
             ))}
         </section>

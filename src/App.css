@@ -10,13 +10,16 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
 }
 
 #logo{
   max-width: 250px;
   display: block;
   margin: auto;
+}
+
+#logo:hover{
+  cursor: pointer;
 }
 
 .card{

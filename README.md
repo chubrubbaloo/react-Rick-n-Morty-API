@@ -2,6 +2,8 @@
 <h2>Förhandsvisning</h2>
 Live demo: https://slickrickapi.netlify.app/
 
+<img width="1208" alt="PREVIEW" src="https://user-images.githubusercontent.com/71407043/194723164-c331db0b-f2e5-4213-b7fe-54b318fce772.png">
+
 
 <h3>Bibliotek, Paket & API</h3>
 <hr>

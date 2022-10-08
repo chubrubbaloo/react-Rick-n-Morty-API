@@ -25,10 +25,13 @@ body{
 .card{
   max-width: 270px;
   margin: 20px;
-  text-align: center;
   border-radius: 12px;
   background-color: #4c4e50;
   transition: 0.25s;
+}
+
+.card > h3{
+  text-align: center;
 }
 
 .card:hover{
@@ -44,9 +47,8 @@ body{
 .property-style{
   margin-top: -5px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 5px;
+  flex-direction: column;
+  padding-left: 10px;
 }
 
 #page-flipper-container{

@@ -1,10 +1,10 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Characters} from "./components/Characters";
-import {Logo} from "./components/Logo";
-import {Pagination} from "./components/Pagination";
-import {Loader} from "./components/Loader";
+import {Characters} from "./components/cards/Characters";
+import {Logo} from "./components/ui/Logo";
+import {Pagination} from "./components/pagination/Pagination";
+import {Loader} from "./components/ui/Loader";
 function App() {
 
     const [characters, setCharacters] = useState([]);
@@ -28,7 +28,6 @@ function App() {
             setCharacters(res.data.results)
         })
 
-        console.log(currentPageUrl)
         // Cancels old request when fetching new data just in case our old request finishes after the new one.
         return () => cancel();
     }, [currentPageUrl])

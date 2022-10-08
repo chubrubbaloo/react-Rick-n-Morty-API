@@ -1,13 +1,13 @@
 import React from "react";
 import {GiHeartBeats} from "react-icons/gi";
 import {GiChoppedSkull} from "react-icons/gi";
-import {GiCurlyMask} from 'react-icons/gi'
 import {GiMale} from "react-icons/gi";
 import {GiFemale} from "react-icons/gi";
 import {MdLocationPin} from "react-icons/md";
 import {GiHumanTarget} from "react-icons/gi";
 import {GiAlienBug} from "react-icons/gi";
 import {GiRobotAntennas} from "react-icons/gi";
+import {BsQuestionLg} from "react-icons/bs";
 
 
 export const Characters = ({characters}) => {
@@ -22,7 +22,7 @@ export const Characters = ({characters}) => {
                     <p className='property-style'>
                         {character.status === 'Alive' ?
                             <GiHeartBeats className='status-icons'/> : character.status === 'Dead' ?
-                                <GiChoppedSkull className='status-icons'/> : <GiCurlyMask className='status-icons'/>}
+                                <GiChoppedSkull className='status-icons'/> : <BsQuestionLg className='status-icons'/>}
                         {character.status === 'Alive' ? 'Alive' : character.status === 'Dead' ?
                             'Dead' : 'Unknown Status'}
                     </p>

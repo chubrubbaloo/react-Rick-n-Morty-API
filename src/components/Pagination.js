@@ -5,7 +5,10 @@ export const Pagination = ({goToNextPage, goToPrevPage}) => {
     return (
         <div id='page-flipper-container'>
             {goToPrevPage && <button className='page-flipper' onClick={() => {
-                window.scroll()
+                window.scroll({
+                    top:0,
+                    left:0
+                })
                 goToPrevPage()
             }}> <GiPreviousButton id='left-arrow'/> Prev </button>}
             {goToNextPage && <button className='page-flipper' onClick={() => {

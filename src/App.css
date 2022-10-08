@@ -29,7 +29,6 @@ body{
 
 .card:hover{
   box-shadow: 0 4px 8px 0 rgb(90, 241, 97), 0 6px 20px 0 rgb(144, 246, 146);
-  cursor: pointer;
   transition: 0.25s;
 }
 

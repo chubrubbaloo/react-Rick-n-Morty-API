@@ -5,15 +5,13 @@ import {Characters} from "./components/Characters";
 import {Logo} from "./components/Logo";
 import {Pagination} from "./components/Pagination";
 import {Loader} from "./components/Loader";
-
 function App() {
 
     const [characters, setCharacters] = useState([]);
-    const [currentPageUrl, setCurrentPageUrl] = useState('https://rickandmortyapi.com/api/character')
+    const [currentPageUrl, setCurrentPageUrl] = useState(`https://rickandmortyapi.com/api/character/`)
     const [nextPageUrl, setNextPageUrl] = useState()
     const [prevPageUrl, setPrevPageUrl] = useState()
     const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         setLoading(true)
@@ -32,8 +30,6 @@ function App() {
         return () => cancel();
     }, [currentPageUrl])
 
-
-
     function goToNextPage() {
         setCurrentPageUrl(nextPageUrl);
     }
@@ -42,17 +38,14 @@ function App() {
         setCurrentPageUrl(prevPageUrl);
     }
 
-
     return (
         <div className="App">
             <Logo/>
-            <Loader loading={loading} />
-            <Characters
-                characters={characters}
-            />
+            <Loader loading={loading}/>
+            <Characters characters={characters}/>
             <Pagination
-            goToNextPage={nextPageUrl ? goToNextPage : null}
-            goToPrevPage={prevPageUrl ? goToPrevPage: null}
+                goToNextPage={nextPageUrl ? goToNextPage : null}
+                goToPrevPage={prevPageUrl ? goToPrevPage : null}
             />
         </div>
     );

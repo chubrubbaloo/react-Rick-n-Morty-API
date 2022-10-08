@@ -46,8 +46,11 @@ body{
 }
 
 #page-flipper-container{
+  width: 80%;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   padding: 0 50px;
 }
 
@@ -56,8 +59,8 @@ body{
   color: white;
   border: none;
   border-radius: 12px;
-  height: 4rem;
-  width: 6rem;
+  height: 3em;
+  width: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -11,6 +11,7 @@ function App() {
     const [currentPageUrl, setCurrentPageUrl] = useState(`https://rickandmortyapi.com/api/character/`)
     const [nextPageUrl, setNextPageUrl] = useState()
     const [prevPageUrl, setPrevPageUrl] = useState()
+    const [pages, setPages] = useState()
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -23,9 +24,11 @@ function App() {
             setLoading(false)
             setNextPageUrl(res.data.info.next)
             setPrevPageUrl(res.data.info.prev)
+            setPages(res.data.info.pages)
             setCharacters(res.data.results)
         })
 
+        console.log(currentPageUrl)
         // Cancels old request when fetching new data just in case our old request finishes after the new one.
         return () => cancel();
     }, [currentPageUrl])
@@ -38,6 +41,10 @@ function App() {
         setCurrentPageUrl(prevPageUrl);
     }
 
+    function goToPage(num) {
+        setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
+    }
+
     return (
         <div className="App">
             <Logo/>
@@ -46,6 +53,8 @@ function App() {
             <Pagination
                 goToNextPage={nextPageUrl ? goToNextPage : null}
                 goToPrevPage={prevPageUrl ? goToPrevPage : null}
+                goToPage={goToPage}
+                pages={pages}
             />
         </div>
     );

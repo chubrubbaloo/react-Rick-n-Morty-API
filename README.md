@@ -6,7 +6,7 @@ Live demo: https://slickrickapi.netlify.app/
 <h3>Bibliotek, Paket & API</h3>
 <hr>
 <ul>
-<li> <a href='https://reactjs.org/' target='_blank'>React</a> för snabb utveckling på klientsidan.</li>
+<li> <a href='https://reactjs.org/' target="_blank">React</a> för snabb utveckling på klientsidan.</li>
 <li><a href='https://www.npmjs.com/package/axios' target='_blank'>Axios</a> för automatisk transformering av JSON-data.</li>
 <li><a href='https://react-icons.github.io/react-icons/ target='_blank''>React-Icons</a> för ikonerna som ändras beroende på karaktärens status.</li>
 <li><a href='https://rickandmortyapi.com/' target='_blank'>Rick and morty</a> API:et för att hämta all data.</li>

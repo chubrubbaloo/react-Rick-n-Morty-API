@@ -32,17 +32,11 @@ function App() {
         return () => cancel();
     }, [currentPageUrl])
 
-    function goToNextPage() {
-        setCurrentPageUrl(nextPageUrl);
-    }
+    const goToNextPage = () => setCurrentPageUrl(nextPageUrl);
 
-    function goToPrevPage() {
-        setCurrentPageUrl(prevPageUrl);
-    }
+    const goToPrevPage = () => setCurrentPageUrl(prevPageUrl);
 
-    function goToPage(num) {
-        setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
-    }
+    const goToPage = (number) => setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${number}`);
 
     return (
         <div className="App">

@@ -1,6 +1,5 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import axios from "axios";
 import {Characters} from "./components/cards/Characters";
 import {Logo} from "./components/ui/Logo";
 import {Pagination} from "./components/pagination/Pagination";
@@ -16,20 +15,19 @@ function App() {
 
     useEffect(() => {
         setLoading(true)
-        let cancel;
 
-        axios.get(currentPageUrl, {
-            cancelToken: new axios.CancelToken(c => cancel = c)
-        }).then(res => {
+        const fetchCharacters = async () => {
+            const response = await fetch(currentPageUrl);
+            const data = await response.json();
+            setCharacters(data.results)
+            setNextPageUrl(data.info.next)
+            setPrevPageUrl(data.info.prev)
+            setPages(data.info.pages)
+
             setLoading(false)
-            setNextPageUrl(res.data.info.next)
-            setPrevPageUrl(res.data.info.prev)
-            setPages(res.data.info.pages)
-            setCharacters(res.data.results)
-        })
+        }
+        fetchCharacters()
 
-        // Cancels old request when fetching new data just in case our old request finishes after the new one.
-        return () => cancel();
     }, [currentPageUrl])
 
     const goToNextPage = () => setCurrentPageUrl(nextPageUrl);

@@ -19,10 +19,10 @@ function App() {
         const fetchCharacters = async () => {
             const response = await fetch(currentPageUrl);
             const data = await response.json();
-            setCharacters(data.results)
-            setNextPageUrl(data.info.next)
-            setPrevPageUrl(data.info.prev)
-            setPages(data.info.pages)
+            setCharacters(await data.results)
+            setNextPageUrl(await data.info.next)
+            setPrevPageUrl(await data.info.prev)
+            setPages(await data.info.pages)
 
             setLoading(false)
         }
